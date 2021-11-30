@@ -13,12 +13,6 @@ var numerical = [
 var special = [
   "!", "@", "#", "$", "%", "^", "&", "*",]
 
-  
-
-
-
-
-
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -27,6 +21,31 @@ function writePassword() {
   passwordText.value = password;
 
 }
+
+generateBtn.addEventListener("click", writePassword)
+function generatePassword() {
+  getCharacter = prompt( "You're password should be at least 8 characters long, and no longer than 128 characters.");
+if (getCharacter >= 8 && getCharacter <=128) {
+  alert("Cool!");
+  specifyCharacter();
+} else{
+  alert("You must choose a valid length of characters!");
+  generatePassword();
+}
+return newPassword
+}
+
+function specifyCharacter() {
+  specify1 = confirm("Do you want lowercase characters?")
+  specify2 = confirm("Do you want uppercase characters?")
+  specify3 = confirm("Do you want number characters?")
+  specify4 = confirm("Do you want special characters?")
+  if (specify1 || specify2 || specify3 || specify4) {
+    arrayJoiner()
+}
+
+
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
