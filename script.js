@@ -43,7 +43,10 @@ function specifyCharacter() {
   if (specify1 || specify2 || specify3 || specify4) {
     arrayJoiner()
 }
-
+else{
+  alert("Choose at least one character criteria")
+  specifyCharacter()
+}
 
 
 
