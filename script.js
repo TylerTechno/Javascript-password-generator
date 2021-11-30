@@ -13,6 +13,25 @@ var numerical = [
 var special = [
   "!", "@", "#", "$", "%", "^", "&", "*",]
 
+  var passwordResult = [];
+
+var newPassword = ""
+
+var getCharacter = 0
+
+var specify1 = false
+
+var specify2 = false
+
+var specify3 = false
+
+var specify4 = false
+
+
+
+
+
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -49,6 +68,26 @@ else{
 }
 
 
+function arrayJoiner() {
+  if (specify1) {
+    passwordResult = passwordResult.concat(lowerCase)
+  }
+  if (specify2) {
+    passwordResult = passwordResult.concat(upperCase)
+  }
+if (specify3) {
+  passwordResult = passwordResult.concat(numerical)
+}
+if (specify4) {
+  passwordResult = passwordResult.concat(special)
+}
+finalPassword()
+}
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+
+function finalPassword() {
+  for  (var i = 0; i < getCharacter; i++) {
+    newPassword = newPassword.concat(passwordResult[Math.floor(Math.random() * passwordResult.length)])
+  }
+};
+}
